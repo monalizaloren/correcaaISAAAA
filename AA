@@ -1,0 +1,38 @@
+  return (
+      <View style={{ borderWidth: 1 }}>
+        <ListItem key={i} bottomDivider>
+          <Icon type="antdesign" name="book" size={40} />
+          <ListItem.Content>
+            <ListItem.Title style={styles.TitleStyle}>
+              {`${item.book_name} (${item.book_id})`}
+            </ListItem.Title>
+            <ListItem.Subtitle style={styles.Subtitle}>
+              {`This book ${transactionType} by ${item.student_name}`}
+              <View style={styles.lowerLeftContainer}>
+                <View style={styles.transactionContainer}>
+                  <Text
+                    style={[
+                      styles.transactionText,
+                      {
+                        color:
+                          item.transaction_type === 'issue'
+                            ? "#78D304"
+                            : "#0364F4"
+                      }
+                    ]}
+                  >
+                    {item.transaction_type.charAt(0).toUpperCase() +
+                      item.transaction_type.slice(1)}
+                  </Text>
+                </View>
+              </View>
+            </ListItem.Subtitle>
+            <View>
+              <Text style={styles.date}>{date}</Text>
+            </View>
+          </ListItem.Content>
+        </ListItem>
+      </View>
+    );
+  };
+}
